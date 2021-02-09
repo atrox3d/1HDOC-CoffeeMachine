@@ -36,6 +36,13 @@ def is_transaction_succesful(money_received, drink_cost):
         return False
 
 
+def make_coffee(drink_name, order_ingredients):
+    print(type(order_ingredients), order_ingredients)
+    for ingredient, quantity in order_ingredients.items():
+        data.resources[ingredient] -= quantity
+    print(f"Here's your {drink_name}, enjoy")
+
+
 profit = 0
 is_on = True
 
@@ -57,6 +64,7 @@ while is_on:
             print(f"${payment}")
             if is_transaction_succesful(payment, data.MENU[choice]["cost"]):
                 print("ok")
+                make_coffee(choice, data.MENU[choice]['ingredients'])
             else:
                 print("poor")
 

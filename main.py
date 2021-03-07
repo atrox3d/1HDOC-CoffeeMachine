@@ -1,3 +1,4 @@
+# renamed github repo to 1hdoc-CoffeeMachine
 import data
 
 
